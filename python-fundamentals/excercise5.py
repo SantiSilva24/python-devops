@@ -11,15 +11,20 @@ def manage_tags(existing_tags: dict, *simple_tags, **key_value_tags) -> dict:
 
     Returns:
         A new dictionary with all tags merged.
+    Raises:
+        TypeError: If existing_tags is not a dictionary.
     """
+
+    if not isinstance(existing_tags, dict):
+        raise TypeError("The provided existing tags must be a dictionary")
     
     merged = existing_tags.copy()
     
-    for key in simple_tags:
+    for key in set(simple_tags):
         merged[key] = 'true'
         
     if key_value_tags:
-        merged.update(key_value_tags)
+        merged = merged | key_value_tags
         
     return merged
     

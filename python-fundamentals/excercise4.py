@@ -4,6 +4,13 @@ class Deployment:
     """
 
     def __init__(self, service_name: str, environment: str):
+
+        if not (isinstance(service_name, str) and isinstance(environment, str)):
+            raise TypeError("Invalid type, both service name and environment must be strings")
+            
+        if not (service_name.strip() and environment.strip()):
+            raise ValueError("Both service name and environment must be non-empty strings")
+        
         self.service_name = service_name
         self.environment = environment
         self.status = 'pending'
@@ -13,6 +20,12 @@ class Deployment:
         self.previous_versions = []
 
     def deploy(self, new_version: str):
+
+        if not isinstance(new_version, str):
+            raise TypeError("New version arguement must be string")
+            
+        if not new_version.strip():
+            raise ValueError("New version must be a non-empty string")
 
         # Save current version before replacing it
         if self.version is not None:
