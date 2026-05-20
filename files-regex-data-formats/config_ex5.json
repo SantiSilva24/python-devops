@@ -1,0 +1,13 @@
+{
+    "deployment_name": "production-cluster",
+    "services": {
+        "api-gateway": {
+            "image_tag": "1.2.0",
+            "port": 80
+        },
+        "user-service": {
+            "image_tag": "1.1.5",
+            "port": 5000
+        }
+    }
+}

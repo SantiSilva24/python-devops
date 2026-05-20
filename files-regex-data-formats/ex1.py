@@ -49,9 +49,11 @@ def archive_log_files(log_directory: Union[str, Path], archive_date: str) -> lis
             archived_files.append(new_path)
     return archived_files
 
-    
+# only runs when executing this current file directly, not when imported
+# The Udemy test runner imports it, only the function is needed
+# See: test_temp_directory.py    
 
-if __name__ == "__main__":          # only runs when executing the file directly
+if __name__ == "__main__":          
     log_dir = Path("/tmp/logs")
     log_dir.mkdir(parents=True, exist_ok=True)
 
