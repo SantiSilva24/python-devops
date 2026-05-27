@@ -88,7 +88,7 @@ def test_expensive_resource_value(
 @pytest.fixture(scope="session", autouse=True)
 def global_setup() -> Iterable[None]:
     print("\n  [SESSION FIXTURE]: global_setup - creating...")
-    yield
+    yield 
     print("\n  [SESSION FIXTURE]: global_setup - deleting...")
 
 
