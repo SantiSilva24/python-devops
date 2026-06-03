@@ -1,0 +1,51 @@
+i ran this command:
+aws ec2 run-instances \
+  --image-id ami-0c02fb55956c7d316 \
+  --instance-type t2.micro \
+  --count 1 \
+  --tag-specifications \
+    'ResourceType=instance,Tags=[{Key=Environment,Value=dev},{Key=App,Value=myapp}]'
+
+and got this error:
+(.venv) PS D:\HCI_Academy\python-devops-cicd-project> aws ec2 run-instances \
+>>   --image-id ami-0c02fb55956c7d316 \
+>>   --instance-type t2.micro \
+>>   --count 1 \
+>>   --tag-specifications \
+>>     'ResourceType=instance,Tags=[{Key=Environment,Value=dev},{Key=App,Value=myapp}]'
+En línea: 2 Carácter: 5
++   --image-id ami-0c02fb55956c7d316 \
++     ~
+Falta una expresión después del operador unario '--'.
+En línea: 2 Carácter: 5
++   --image-id ami-0c02fb55956c7d316 \
++     ~~~~~~~~
+Token 'image-id' inesperado en la expresión o la instrucción.
+En línea: 3 Carácter: 5
++   --instance-type t2.micro \
++     ~
+Falta una expresión después del operador unario '--'.
+En línea: 3 Carácter: 5
++   --instance-type t2.micro \
++     ~~~~~~~~~~~~~
+Token 'instance-type' inesperado en la expresión o la instrucción.
+En línea: 4 Carácter: 5
++   --count 1 \
++     ~
+Falta una expresión después del operador unario '--'.
+En línea: 4 Carácter: 5
++   --count 1 \
++     ~~~~~
+Token 'count' inesperado en la expresión o la instrucción.
+En línea: 5 Carácter: 5
++   --tag-specifications \
++     ~
+Falta una expresión después del operador unario '--'.
+En línea: 5 Carácter: 5
++   --tag-specifications \
++     ~~~~~~~~~~~~~~~~~~
+Token 'tag-specifications' inesperado en la expresión o la instrucción.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+ 
+im using powershell in windows 10, help me solving it 
